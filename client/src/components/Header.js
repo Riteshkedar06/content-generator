@@ -33,7 +33,21 @@ const Header = () => {
           color="primary"
           component={Link}
           to="/generate-content"
-          sx={{ marginTop: "16px" }}
+          sx={{
+            alignSelf: "center",
+            bgcolor: "#5D4DCD",
+            p: 2,
+            px: 4,
+            borderRadius: 2,
+            mt: 2,
+            fontSize: 15,
+            fontWeight: "bold",
+            transition: "background-color 0.3s ease-in-out",
+
+            "&:hover": {
+              backgroundColor: "#3E34B3",
+            },
+          }}
         >
           Generate Content
         </Button>

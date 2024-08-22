@@ -20,7 +20,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/generate",
+        "http://localhost:5001/api/generate",
         formData
       );
       setGeneratedContent(response.data.content);

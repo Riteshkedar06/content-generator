@@ -11,7 +11,12 @@ const GeneratedContentPage = ({
   generatedContent,
 }) => {
   return (
-    <Box sx={{ padding: "20px", maxWidth: "900px", margin: "auto" }}>
+    <Box
+      sx={{
+        padding: "20px",
+        margin: "auto",
+      }}
+    >
       <ContentForm onGenerate={onGenerate} />
       {loading && (
         <CircularProgress sx={{ display: "block", margin: "20px auto" }} />

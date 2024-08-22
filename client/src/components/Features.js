@@ -1,19 +1,24 @@
-// src/components/Features.js
 import React from "react";
-import { Container, Typography, Grid, Card, CardContent } from "@mui/material";
+import { Container, Typography, Grid, Box } from "@mui/material";
 
 const features = [
   {
     title: "AI-Powered",
-    description: "Generate content using advanced AI algorithms.",
+    description:
+      "Leverage cutting-edge AI algorithms to automatically generate high-quality content tailored to your needs. Our LLM model ensures your content is both relevant and engaging.",
+    image: "img1.png",
   },
   {
     title: "Multiple Formats",
-    description: "Create blog posts, emails, social media content, and more.",
+    description:
+      "Generate content in a variety of formats. From long-form blog articles to concise social media posts, our platform offers flexibility to create content that suits your goals and audience.",
+    image: "img2.png",
   },
   {
     title: "Easy to Use",
-    description: "User-friendly interface for quick content generation.",
+    description:
+      "The intuitive and user-friendly interface makes content generation quick and easy. Even with minimal experience, you can navigate the platform effortlessly and produce professional-grade content in minutes.",
+    image: "img3.png",
   },
 ];
 
@@ -23,20 +28,40 @@ const Features = () => {
       <Typography variant="h4" component="h2" gutterBottom>
         Features
       </Typography>
-      <Grid container spacing={4}>
-        {features.map((feature, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4}>
-            <Card>
-              <CardContent>
-                <Typography variant="h5" component="h3">
-                  {feature.title}
-                </Typography>
-                <Typography>{feature.description}</Typography>
-              </CardContent>
-            </Card>
+      {features.map((feature, index) => (
+        <Grid
+          container
+          spacing={4}
+          key={index}
+          direction={index % 2 === 0 ? "row" : "row-reverse"}
+          alignItems="center"
+          sx={{ mb: 8 }}
+        >
+          <Grid item xs={12} md={6}>
+            <Box sx={{ p: 3 }}>
+              <Typography variant="h5" component="h3" gutterBottom>
+                {feature.title}
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 2 }}>
+                {feature.description}
+              </Typography>
+            </Box>
           </Grid>
-        ))}
-      </Grid>
+          <Grid item xs={12} md={6}>
+            <Box
+              component="img"
+              src={feature.image}
+              alt={feature.title}
+              sx={{
+                width: "100%",
+                height: "auto",
+                borderRadius: 2,
+                boxShadow: 3,
+              }}
+            />
+          </Grid>
+        </Grid>
+      ))}
     </Container>
   );
 };
