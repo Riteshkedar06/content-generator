@@ -11,11 +11,14 @@ app.use(express.json());
 app.post("/api/generate", async (req, res) => {
   const { targetAudience, contentType, context } = req.body;
   try {
-    const response = await axios.post("http://localhost:8000/generate", {
-      targetAudience,
-      contentType,
-      context,
-    });
+    const response = await axios.post(
+      "https://content-generator-python.onrender.com/generate",
+      {
+        targetAudience,
+        contentType,
+        context,
+      }
+    );
     res.send({ content: response.data.content });
   } catch (error) {
     res.status(500).send({ error: "Error generating content" });

@@ -20,7 +20,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/generate",
+        "https://content-generator-ln4q.onrender.com/api/generate",
         formData
       );
       setGeneratedContent(response.data.content);
